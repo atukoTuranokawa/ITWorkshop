@@ -1,0 +1,56 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <!-- H2Test サーブレット -->
+    <servlet>
+        <servlet-name>H2Test</servlet-name>
+        <servlet-class>com.example.test.H2Test</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>H2Test</servlet-name>
+        <url-pattern>/H2Test</url-pattern>
+    </servlet-mapping>
+
+    <!-- MoodListServlet サーブレット -->
+    <servlet>
+        <servlet-name>MoodListServlet</servlet-name>
+        <servlet-class>com.example.test.MoodListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MoodListServlet</servlet-name>
+        <url-pattern>/MoodListServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- MoodFormServlet サーブレット -->
+    <servlet>
+        <servlet-name>MoodFormServlet</servlet-name>
+        <servlet-class>com.example.test.MoodFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MoodFormServlet</servlet-name>
+        <url-pattern>/MoodFormServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- EditMoodServlet サーブレット -->
+    <servlet>
+        <servlet-name>EditMoodServlet</servlet-name>
+        <servlet-class>com.example.test.EditMoodServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditMoodServlet</servlet-name>
+        <url-pattern>/EditMoodServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- DeleteMoodServlet サーブレット -->
+    <servlet>
+        <servlet-name>DeleteMoodServlet</servlet-name>
+        <servlet-class>com.example.test.DeleteMoodServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteMoodServlet</servlet-name>
+        <url-pattern>/DeleteMoodServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>
