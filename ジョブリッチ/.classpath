@@ -13,6 +13,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/h2-2.3.232.jar"/>
+	<classpathentry kind="lib" path="C:/Users/8Java19/Desktop/ポートフォリオ/ジョブリッチ/src/main/webapp/WEB-INF/lib/h2-2.3.232.jar"/>
+	<classpathentry kind="lib" path="C:/Users/8Java19/Desktop/ポートフォリオ/ジョブリッチ/src/main/webapp/WEB-INF/lib/jakarta.servlet-api-5.0.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

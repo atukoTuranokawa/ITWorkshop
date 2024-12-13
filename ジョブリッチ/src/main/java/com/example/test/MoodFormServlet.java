@@ -6,17 +6,19 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class MoodFormServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        // フォームのHTMLを出力
         out.println("<html><body>");
         out.println("<h1>気分記録フォーム</h1>");
         out.println("<form method='post' action='MoodFormServlet'>");
@@ -33,20 +35,14 @@ public class MoodFormServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        // フォームからデータを取得
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String date = request.getParameter("date");
         String mood = request.getParameter("mood");
         String notes = request.getParameter("notes");
 
         try {
-            // JDBCドライバーをロード
             Class.forName("org.h2.Driver");
-
-            // データベース接続
             Connection conn = DriverManager.getConnection("jdbc:h2:~/mood_tracker", "sa", "");
-
-            // データを挿入
             String insertSQL = "INSERT INTO moods (USER_ID, DATE, MOOD, NOTES) VALUES (1, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(insertSQL);
             pstmt.setString(1, date);
@@ -54,10 +50,7 @@ public class MoodFormServlet extends HttpServlet {
             pstmt.setString(3, notes);
             pstmt.executeUpdate();
 
-            // 接続を閉じる
             conn.close();
-
-            // 成功メッセージ
             response.sendRedirect("MoodListServlet");
         } catch (Exception e) {
             e.printStackTrace();

@@ -7,29 +7,27 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class MoodListServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
         try {
-            // JDBCドライバーをロード
             Class.forName("org.h2.Driver");
-
-            // データベース接続
             Connection conn = DriverManager.getConnection("jdbc:h2:~/mood_tracker", "sa", "");
             Statement stmt = conn.createStatement();
 
-            // データを取得
             String query = "SELECT * FROM moods ORDER BY DATE DESC";
             ResultSet rs = stmt.executeQuery(query);
 
-            // HTML形式でデータを表示
             out.println("<html><body>");
             out.println("<h1>気分記録一覧</h1>");
             out.println("<table border='1'>");
@@ -52,7 +50,6 @@ public class MoodListServlet extends HttpServlet {
             out.println("</table>");
             out.println("</body></html>");
 
-            // 接続を閉じる
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();
