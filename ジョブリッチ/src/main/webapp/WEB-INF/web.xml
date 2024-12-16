@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
-                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" 
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <display-name>ExampleApp</display-name>
 
@@ -25,4 +25,35 @@
         <servlet-name>MoodListServlet</servlet-name>
         <url-pattern>/MoodListServlet</url-pattern>
     </servlet-mapping>
+
+    <!-- MoodFormServlet -->
+    <servlet>
+        <servlet-name>MoodFormServlet</servlet-name>
+        <servlet-class>com.example.test.MoodFormServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MoodFormServlet</servlet-name>
+        <url-pattern>/MoodFormServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- EditMoodServlet -->
+    <servlet>
+        <servlet-name>EditMoodServlet</servlet-name>
+        <servlet-class>com.example.test.EditMoodServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditMoodServlet</servlet-name>
+        <url-pattern>/EditMoodServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- H2Test -->
+    <servlet>
+        <servlet-name>H2Test</servlet-name>
+        <servlet-class>com.example.test.H2Test</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>H2Test</servlet-name>
+        <url-pattern>/H2Test</url-pattern>
+    </servlet-mapping>
+
 </web-app>
