@@ -1,0 +1,162 @@
+/* 全体のスタイル */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* コンテナの中央寄せと幅制限 */
+.container {
+    max-width: 800px;
+    margin: 30px auto; /* 上下 30px, 左右 自動で中央寄せ */
+    background: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* ヘッダーのスタイル */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    border-bottom: 2px solid #4caf50;
+    padding-bottom: 10px;
+}
+
+/* フォームのスタイル */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 中央揃え */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+form label {
+    font-weight: bold;
+    color: #555;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="date"],
+form select,
+form textarea {
+    width: 100%; /* 幅をフォーム全体に合わせる */
+    max-width: 400px; /* 最大幅を設定 */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="date"]:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+form textarea {
+    height: 120px;
+}
+
+form input[type="submit"] {
+    width: 100%; /* ボタンの幅をフォーム全体に合わせる */
+    max-width: 400px; /* 最大幅を設定 */
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #43a047;
+}
+
+/* テーブルのスタイル */
+table {
+    width: 100%; /* テーブルの幅を最大限に */
+    max-width: 100%; /* 親要素の幅に合わせる */
+    border-collapse: collapse;
+    margin: 20px auto; /* 上下 20px のマージン、左右中央寄せ */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.2s;
+}
+
+/* リンクボタン */
+a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #388e3c;
+}
+
+a.btn {
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px; /* ボタン同士のスペースを追加 */
+}
+
+a.btn:hover {
+    background-color: #43a047;
+    transform: scale(1.05);
+}
+
+/* フッターや追加リンク */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #888;
+}
